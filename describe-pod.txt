@@ -1,0 +1,59 @@
+Name:             my-profile-7b4d969f7d-8rcdd
+Namespace:        nithish
+Priority:         0
+Service Account:  default
+Node:             aks-system-51783313-vmss000000/10.224.0.4
+Start Time:       Fri, 15 Aug 2025 06:10:58 +0000
+Labels:           app=my-profile
+                  pod-template-hash=7b4d969f7d
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.23
+IPs:
+  IP:           10.244.0.23
+Controlled By:  ReplicaSet/my-profile-7b4d969f7d
+Containers:
+  my-profile-container:
+    Container ID:   containerd://f12734f9dbcc049d6a9c6b85e6d4eb4e0902ec83c0538cba4e603453a5e82f96
+    Image:          nithishacrm3wx2.azurecr.io/my-profile:latest
+    Image ID:       nithishacrm3wx2.azurecr.io/my-profile@sha256:90aa7e7fed3c15e7a6fef537e6fe7465bec57e186543dd526735ef079af696f6
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 15 Aug 2025 06:10:58 +0000
+    Ready:          True
+    Restart Count:  0
+    Liveness:       http-get http://:80/ delay=15s timeout=1s period=20s #success=1 #failure=3
+    Readiness:      http-get http://:80/ delay=5s timeout=1s period=10s #success=1 #failure=3
+    Environment Variables from:
+      my-profile-config  ConfigMap  Optional: false
+    Environment:         <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-2scs5 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-2scs5:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 CriticalAddonsOnly:NoSchedule op=Exists
+                             node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason                           Age                 From               Message
+  ----     ------                           ----                ----               -------
+  Normal   Scheduled                        3m3s                default-scheduler  Successfully assigned nithish/my-profile-7b4d969f7d-8rcdd to aks-system-51783313-vmss000000
+  Normal   Pulled                           3m3s                kubelet            Container image "nithishacrm3wx2.azurecr.io/my-profile:latest" already present on machine
+  Normal   Created                          3m3s                kubelet            Created container: my-profile-container
+  Normal   Started                          3m3s                kubelet            Started container my-profile-container
+  Warning  FailedToRetrieveImagePullSecret  36s (x6 over 3m3s)  kubelet            Unable to retrieve some image pull secrets (acr-auth); attempting to pull the image may not succeed.

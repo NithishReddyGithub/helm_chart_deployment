@@ -1,0 +1,2 @@
+NAME                 TYPE           CLUSTER-IP    EXTERNAL-IP    PORT(S)        AGE
+my-profile-service   LoadBalancer   10.0.196.54   4.187.173.47   80:31508/TCP   108s

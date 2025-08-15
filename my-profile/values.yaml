@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image:
+  repository: nithishacrm3wx2.azurecr.io/my-profile
+  tag: latest
+  pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: acr-auth
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 80
+
+containerPort: 80
+
+config:
+  welcomeMessage: "Welcome to my profile page!"
+
+namespace: nithish

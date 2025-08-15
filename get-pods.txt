@@ -1,0 +1,3 @@
+NAME                          READY   STATUS    RESTARTS   AGE     IP            NODE                             NOMINATED NODE   READINESS GATES
+my-profile-7b4d969f7d-8rcdd   1/1     Running   0          2m15s   10.244.0.23   aks-system-51783313-vmss000000   <none>           <none>
+my-profile-7b4d969f7d-xsssk   1/1     Running   0          2m15s   10.244.0.24   aks-system-51783313-vmss000000   <none>           <none>
